@@ -7,7 +7,7 @@ const moviesRouter = require("./movies/movies.router");
 const theatersRouter = require("./theaters/theaters.router");
 const reviewsRouter = require("./reviews/reviews.router");
 
-app.use(cors());
+app.use(cors({ "origin": process.env.FRONTEND_URL, "methods": "OPTIONS,GET,PUT,POST,DELETE" }));
 app.use(express.json());
 
 app.use("/movies", moviesRouter);
